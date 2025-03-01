@@ -16,7 +16,7 @@ The compiled binary will be placed in the **`./build`** directory.
 
 ## Running Locally
 
-To run the bot locally, you need to export the following environment variables:
+1. To run the bot locally, you need to export the following environment variables:
 
 ```bash
 export TELEGRAM_BOT_TOKEN=""
@@ -24,6 +24,11 @@ export TARGET_IP=""
 export TARGET_MAC=""
 export WOL_COMMAND="etherwake -i br-lan %s"
 export CHECK_STATUS_COMMAND="ping -c 1 -W 1 %s > /dev/null 2>&1"
+```
+
+2. Run execuatble from build folder
+```bash
+./build/wol-bot-x86_64
 ```
 
 ---
