@@ -1,0 +1,30 @@
+#!/bin/sh /etc/rc.common
+
+
+NAME="wol-bot"
+START=99
+STOP=15
+
+export TELEGRAM_BOT_TOKEN=""
+export TARGET_IP=""
+export TARGET_MAK=""
+
+export WOL_COMMAND="etherwake -i br-lan %s"
+export CHECK_STATUS_COMMAND="ping -c 1 -W 1 %s > /dev/null 2>&1"
+
+BIN_PATH="/usr/bin/wol-bot"
+
+start() {
+    echo "Starting Telegram Bot service"
+    $BIN_PATH > /tmp/telegram-bot.log 2>&1 &
+}
+
+stop() {
+    echo "Stopping Telegram Bot service"
+    killall $BIN_PATH
+}
+
+restart() {
+    stop
+    start
+}
