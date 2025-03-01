@@ -68,7 +68,7 @@ void handle_update(const char *response, long *last_update) {
                                 send_message(chat_id, "🔴 Failed to execute command");
                             }
                         } else {
-                            send_message(chat_id, "Usage: \n/status or \n/wakeup");
+                            send_message(chat_id, "Usage:\n/status - To get current status of PC\n/wakeup - To wake up the PC\n");
                         }
                     } else {
                         INFO("WARNING DISALLOWED USER: %ld", chat_id);
